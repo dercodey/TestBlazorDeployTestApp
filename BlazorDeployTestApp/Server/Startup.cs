@@ -43,7 +43,11 @@ namespace BlazorDeployTestApp.Server
             }
 
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "WeatherForecast");
+            });
+
 
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
